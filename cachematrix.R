@@ -5,8 +5,14 @@
 ## a matrix (makeCacheMatrix) and return the inversion of matrix(x) from memory if x 
 ## is a square, invertible matrix that has already been inverted (cacheSolve)
 
-## makeCacheMatriX stores the inverse of matrix (in a list) to prevent
+## makeCacheMatriX functions stores the inverse of matrix (in a list) to prevent
 ## the recalculation of the matrix inversion with every iteration
+
+## 4 functions are input for cacheSolve (in a list) performing the following 
+## - Set Matrix: default i to null and set x to y), 
+## - Get Matrix: return x, 
+## - Set Inverse uses solve() function to invert matrix as i
+## - Get Inverse: get inverted matrix as i
 
 
 makeCacheMatrix <- function(x = matrix()) {
@@ -36,8 +42,9 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## cacheSolve return the inverse matrix of x by either returning the cached inversion of the matrix
-## or computing the inverse if the inverted matrix is not available
+## The cacheSolve takes makeCacheMatrix as an input and either returns the cached inversion 
+## of the matrix or performs the inversion of the matrix (using makeCacheMatrix functions) 
+## if the inverted matrix is not available or the matrix has changed 
 
 cacheSolve <- function(x, ...) {
   
